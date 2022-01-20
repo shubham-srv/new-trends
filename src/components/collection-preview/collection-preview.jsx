@@ -11,8 +11,8 @@ export default function CollectionPreview({ title, items }) {
           .filter((item, index) => {
             return index < 4;
           })
-          .map(({ id, ...otherProps }) => {
-            return <CollectionItem key={id} {...otherProps} />;
+          .map(({ ...otherProps }) => {
+            return <CollectionItem key={otherProps.id} {...otherProps} />;
           })}
       </div>
     </div>
