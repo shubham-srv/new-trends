@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import CollectionOverview from "../../components/collection-overview/collection-overview";
-import TestPage from "../testpage/testpage";
+import CollectionPage from "../collection-page/collection-page";
 
 import "./shop.scss";
 
@@ -12,7 +12,10 @@ const ShopPage = ({ match }) => (
     <div>
       <Switch>
         <Route exact path={`${match.path}`} component={CollectionOverview} />
-        <Route path="/shop/:someID" component={TestPage} />
+        <Route
+          path={`${match.path}/:collectionId`}
+          component={CollectionPage}
+        />
       </Switch>
     </div>
   </div>
