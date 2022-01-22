@@ -9,7 +9,6 @@ import CartItem from "../cart-item/cart-item";
 import { selectCartItems } from "../../redux/cart/cart.selectors";
 
 const CartDropdown = ({ cartItems, history, dispatch }) => {
-  console.log(cartItems);
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
