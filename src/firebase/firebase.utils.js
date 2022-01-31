@@ -1,7 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getFirestore, setDoc, getDoc, doc } from "firebase/firestore";
+import {
+  getFirestore,
+  setDoc,
+  getDoc,
+  doc,
+  writeBatch,
+  collection,
+  getDocs,
+  query,
+} from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -25,13 +34,26 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 // Google Sign in
-const provider = new GoogleAuthProvider();
+export const googleProvider = new GoogleAuthProvider();
 export const googleSignIn = async () => {
   try {
-    await signInWithPopup(auth, provider);
+    await signInWithPopup(auth, googleProvider);
   } catch (error) {
     console.log(error.code, error.message);
   }
+};
+
+// add new documents to shop collections
+export const addCollectionsAndDocuments = async (collectionItemsArray) => {
+  const batch = writeBatch(db);
+  collectionItemsArray.forEach(async (eachItem) => {
+    const { title, items } = eachItem;
+    console.log(items);
+    const docRef = doc(collection(db, "collections"));
+    batch.set(docRef, { title, items });
+  });
+
+  await batch.commit();
 };
 
 // create user
@@ -51,4 +73,24 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+// get collections from firebase and convert to required collections object
+
+export const mapCollectionsToObject = async () => {
+  const finalCollectionsObject = {};
+  const collectionQuery = query(collection(db, "collections"));
+  const allDocsRef = await getDocs(collectionQuery);
+  allDocsRef.forEach((doc) => {
+    const { title, items } = doc.data();
+    const titleLower = title.toLowerCase();
+    finalCollectionsObject[titleLower] = {
+      id: doc.id,
+      title,
+      routeName: encodeURI(titleLower),
+      items,
+    };
+  });
+
+  return finalCollectionsObject;
 };

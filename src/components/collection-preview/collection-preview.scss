@@ -4,8 +4,14 @@
   margin-bottom: 30px;
 
   .title {
-    font-size: 28px;
+    align-self: center;
+    cursor: pointer;
+    font-size: 38px;
     margin-bottom: 25px;
+
+    &:hover {
+      color: grey;
+    }
   }
 
   .preview {

@@ -2,10 +2,18 @@ import React from "react";
 import "./collection-preview.scss";
 import CollectionItem from "../collection-item/collection-item";
 
-export default function CollectionPreview({ title, items }) {
+import { withRouter } from "react-router-dom";
+
+const CollectionPreview = ({ title, items, history, match }) => {
+  const handleClick = () => {
+    history.push(`${match.url}/${title.toLowerCase()}`);
+  };
   return (
     <div className="collection-preview">
-      <h1 className="title">{title}</h1>
+      <h1 className="title" onClick={handleClick}>
+        {title}
+      </h1>
+
       <div className="preview">
         {items
           .filter((item, index) => {
@@ -17,4 +25,6 @@ export default function CollectionPreview({ title, items }) {
       </div>
     </div>
   );
-}
+};
+
+export default withRouter(CollectionPreview);
