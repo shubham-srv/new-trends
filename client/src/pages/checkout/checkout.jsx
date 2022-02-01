@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import { Route, useRouteMatch } from "react-router-dom";
 
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
@@ -8,6 +9,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckoutItem from "../../components/checkout-item/checkout-item";
 import CustomButton from "../../components/custom-button/custom-button";
 import CheckoutForm from "../../components/checkout-form/checkout-form";
+import PaymentSuccess from "./payment-success";
 
 import {
   selectCartItems,
@@ -22,6 +24,8 @@ const stripePromise = loadStripe(
 );
 
 const CheckoutPage = ({ cartItems, cartTotal }) => {
+  const match = useRouteMatch();
+  console.log(`${match.path}/success`);
   const priceForStripe = cartTotal * 100;
   const [clientSecret, setClientSecret] = useState("");
 
@@ -69,6 +73,7 @@ const CheckoutPage = ({ cartItems, cartTotal }) => {
       {!clientSecret && (
         <CustomButton onClick={handlePaymentClick}>PAY NOW</CustomButton>
       )}
+      <Route path={`${match.path}/success`} component={PaymentSuccess} />
       <div className="card-details">
         <h2>
           USE THE FOLLOWING CARD DETAILS FOR PAYMENT <br />

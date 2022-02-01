@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.post("/payment", cors(), async (req, res) => {
-  const { amount, id } = req.body;
+  const { amount } = req.body;
   console.log(amount);
 
   const paymentIntent = await stripe.paymentIntents.create({
