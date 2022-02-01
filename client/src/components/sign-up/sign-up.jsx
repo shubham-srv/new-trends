@@ -43,7 +43,7 @@ const SignUp = () => {
   return (
     <div className="sign-up">
       <h2 className="title">I don't have an account</h2>
-      <span>Sign up with Email and Password</span>
+
       <form onSubmit={handleSubmit}>
         <FormInput
           changeHandler={handleChange}

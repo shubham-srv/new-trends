@@ -1,5 +1,6 @@
-.sign-up {
-  width: 35vw;
+.sign-in {
+  margin-bottom: 5rem;
+  width: 30vw;
   display: flex;
   flex-direction: column;
   @media screen and (max-width: 800px) {
@@ -9,10 +10,9 @@
 .title {
   margin-bottom: 3rem;
 }
-
-.sign-up-button {
+.button {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   @media screen and (max-width: 800px) {
     flex-direction: column;
   }
