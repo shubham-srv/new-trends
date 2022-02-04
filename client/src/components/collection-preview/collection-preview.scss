@@ -1,14 +1,14 @@
 .collection-preview {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-bottom: 30px;
 
   .title {
-    align-self: center;
+    justify-self: center;
     cursor: pointer;
     font-size: 38px;
     margin-bottom: 25px;
-
     &:hover {
       color: grey;
     }
@@ -16,6 +16,13 @@
 
   .preview {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+
+    @media screen and (max-width: 800px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
   }
 }

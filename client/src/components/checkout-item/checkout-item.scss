@@ -19,7 +19,11 @@
   .name,
   .quantity,
   .price {
-    width: 23%;
+    font-size: 3vmin;
+    align-self: auto;
+    @media screen and (min-width: 480px) {
+      width: 23%;
+    }
   }
 
   .quantity {
@@ -28,10 +32,11 @@
     justify-content: flex-start;
 
     .number {
-      margin: 5px;
+      margin: 0 8px 0 0;
     }
 
     .buttons {
+      inline-size: 3vmin;
       cursor: pointer;
     }
   }

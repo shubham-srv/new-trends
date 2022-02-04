@@ -1,6 +1,6 @@
 .menu-item {
   min-width: 30%;
-  height: 240px;
+  height: 30vmax;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -18,7 +18,10 @@
   }
 
   &.large {
-    height: 400px; //can use 380px
+    height: 35vmax; //can use 380px
+    @media screen and (max-width: 800px) {
+      height: 30vmax;
+    }
   }
 
   .background-image {
@@ -42,7 +45,9 @@
   }
 
   .content {
-    height: 90px;
+    min-width: 5%;
+    max-width: 23%;
+    height: 100px;
     padding: 0 25px;
     display: flex;
     flex-direction: column;
@@ -56,13 +61,19 @@
     .title {
       font-weight: bold;
       margin-bottom: 6px;
-      font-size: 28px;
+      font-size: 140%;
       color: #4a4a4a;
+      @media screen and (max-width: 700px) {
+        font-size: 120%;
+      }
+      @media screen and (max-width: 450px) {
+        font-size: 95%;
+      }
     }
 
     .subtitle {
+      font-size: 14px;
       font-weight: lighter;
-      font-size: 16px;
     }
   }
 }

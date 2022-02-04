@@ -24,6 +24,14 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid darkgrey;
+    @media screen and (max-width: 800px) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      overflow-x: scroll;
+      .header-block {
+        margin: auto 10px;
+      }
+    }
 
     .header-block {
       text-transform: capitalize;

@@ -1,6 +1,9 @@
 body {
   font-family: "Inconsolata", monospace;
-  padding: 1rem 4rem;
+  padding: 20px 40px;
+  @media screen and (max-width: 800px) {
+    padding: 10px;
+  }
 }
 
 a {

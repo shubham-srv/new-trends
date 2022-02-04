@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import React, { useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,6 +8,7 @@ import ShopPage from "./pages/shop/shop";
 import Header from "./components/header/header";
 import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up";
 import CheckoutPage from "./pages/checkout/checkout";
+import ContactUs from "./pages/contact/contact";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../src/firebase/firebase.utils";
@@ -42,6 +43,7 @@ const App = () => {
           path="/sign-in"
           render={() => (currentUser ? <Redirect to="/" /> : <SignInSignUp />)}
         />
+        <Route path="/contact" component={ContactUs} />
       </Switch>
     </div>
   );
