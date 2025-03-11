@@ -1,8 +1,16 @@
 .sign-in-sign-up {
   padding: 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   @media screen and (max-width: 800px) {
     flex-direction: column;
+  }
+  & > div > form {
+    border: none;
+    background: linear-gradient(135deg, #efeeee, #ffffff);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
   }
 }

@@ -18,11 +18,22 @@ import {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBWZb382tiw5SFrFkAW0I6_uJR2syMDYFo",
+//   authDomain: "new-trends-f9d7d.firebaseapp.com",
+//   projectId: "new-trends-f9d7d",
+//   storageBucket: "new-trends-f9d7d.appspot.com",
+//   messagingSenderId: "454155196564",
+//   appId: "1:454155196564:web:3a963b765799da519b3c81",
+//   measurementId: "G-EXCD47G48G",
+// };
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBWZb382tiw5SFrFkAW0I6_uJR2syMDYFo",
   authDomain: "new-trends-f9d7d.firebaseapp.com",
   projectId: "new-trends-f9d7d",
-  storageBucket: "new-trends-f9d7d.appspot.com",
+  storageBucket: "new-trends-f9d7d.firebasestorage.app",
   messagingSenderId: "454155196564",
   appId: "1:454155196564:web:3a963b765799da519b3c81",
   measurementId: "G-EXCD47G48G",

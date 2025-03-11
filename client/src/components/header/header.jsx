@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import { ReactComponent as Logo } from "../../assets/shop-icon.svg";
 import "./header.scss";
@@ -44,7 +45,7 @@ const Header = () => {
         </Link>
         <CartIcon />
       </div>
-      {hidden ? null : <CartDropdown />}
+      <AnimatePresence>{hidden ? null : <CartDropdown />}</AnimatePresence>
     </div>
   );
 };

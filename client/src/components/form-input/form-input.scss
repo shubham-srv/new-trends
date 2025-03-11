@@ -20,7 +20,7 @@ $main-color: black;
     display: block;
     width: 100%;
     border: none;
-    border-radius: 0;
+    border-radius: 4px 4px 0 0;
     border-bottom: 1px solid $sub-color;
     margin: 25px 0;
 
@@ -33,7 +33,7 @@ $main-color: black;
     }
   }
 
-  input[type='password'] {
+  input[type="password"] {
     letter-spacing: 0.3em;
   }
 

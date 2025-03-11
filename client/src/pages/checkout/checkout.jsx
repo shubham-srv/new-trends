@@ -74,12 +74,14 @@ const CheckoutPage = ({ cartItems, cartTotal }) => {
         <CustomButton onClick={handlePaymentClick}>PAY NOW</CustomButton>
       )}
       <Route path={`${match.path}/success`} component={PaymentSuccess} />
-      <div className="card-details">
-        <h2>
-          USE THE FOLLOWING CARD DETAILS FOR PAYMENT <br />
-          4242 4242 4242 4242, EXP:any future date, CVV:123
-        </h2>
-      </div>
+      {/* {!clientSecret && (
+        <div className="card-details">
+          <h2>
+            USE THE FOLLOWING CARD DETAILS FOR PAYMENT <br />
+            4242 4242 4242 4242, EXP:any future date, CVV:123
+          </h2>
+        </div>
+      )} */}
     </div>
   );
 };

@@ -14,24 +14,27 @@ const ContactUs = () => {
   };
   return (
     <div className="bg">
-      <h1>Contact us</h1>
-      <form action="submit">
-        <FormInput
-          changeHandler={handleChange}
-          name="name"
-          value={data.name}
-          label="Name"
-          required
-        />
-        <FormInput
-          changeHandler={handleChange}
-          name="email"
-          value={data.email}
-          label="Email"
-          required
-        />
-        <CustomButton>SUBMIT</CustomButton>
-      </form>
+      <div className="background-img" alt="Customer_Care_Logo" />
+      {/* <h1>Contact us</h1> */}
+      <div className="form-element">
+        <form action="submit">
+          <FormInput
+            changeHandler={handleChange}
+            name="name"
+            value={data.name}
+            label="Name"
+            required
+          />
+          <FormInput
+            changeHandler={handleChange}
+            name="email"
+            value={data.email}
+            label="Email"
+            required
+          />
+          <CustomButton>SUBMIT</CustomButton>
+        </form>
+      </div>
     </div>
   );
 };
